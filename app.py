@@ -19,13 +19,11 @@ if st.button("Анализировать"):
         """
         
         try:
-            # Запрос к рабочей модели Llama 3.3
             chat = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
                 messages=[{"role": "user", "content": my_prompt}]
             )
             
-            # Вывод результата
             st.markdown("---")
             st.markdown("### Результат разбора:")
             st.write(chat.choices[0].message.content)
